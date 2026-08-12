@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Dragon Chinese Restaurant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🐉 Golden Dragon
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="order-btn" onclick="scrollToMenu()">
+                Order Now
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">AUTHENTIC CHINESE CUISINE</p>
+
+            <h1>
+                Taste the Flavors<br>
+                of <span>China</span>
+            </h1>
+
+            <p>
+                Experience delicious Chinese dishes prepared
+                with fresh ingredients and traditional recipes.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="scrollToMenu()" class="main-btn">
+                    Explore Menu
+                </button>
+
+                <button onclick="scrollToContact()" class="secondary-btn">
+                    Contact Us
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+
+        <div class="section-title">
+            <p>OUR MENU</p>
+            <h2>Popular Chinese Dishes</h2>
+            <span></span>
+        </div>
+
+
+        <div class="menu-container">
+
+            <!-- Dish 1 -->
+            <div class="food-card">
+
+                <div class="food-image noodles">
+                    🍜
+                </div>
+
+                <div class="food-info">
+                    <h3>Chicken Chow Mein</h3>
+
+                    <p>
+                        Stir-fried noodles with chicken,
+                        fresh vegetables and our special sauce.
+                    </p>
+
+                    <div class="food-bottom">
+                        <strong>Rs. 850</strong>
+
+                        <button onclick="addToCart('Chicken Chow Mein', 850)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Dish 2 -->
+            <div class="food-card">
+
+                <div class="food-image rice">
+                    🍚
+                </div>
+
+                <div class="food-info">
+                    <h3>Chicken Fried Rice</h3>
+
+                    <p>
+                        Fragrant rice tossed with chicken,
+                        vegetables, eggs and Chinese spices.
+                    </p>
+
+                    <div class="food-bottom">
+                        <strong>Rs. 750</strong>
+
+                        <button onclick="addToCart('Chicken Fried Rice', 750)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Dish 3 -->
+            <div class="food-card">
+
+                <div class="food-image dumplings">
+                    🥟
+                </div>
+
+                <div class="food-info">
+                    <h3>Chicken Dumplings</h3>
+
+                    <p>
+                        Soft dumplings filled with seasoned
+                        chicken and served with dipping sauce.
+                    </p>
+
+                    <div class="food-bottom">
+                        <strong>Rs. 650</strong>
+
+                        <button onclick="addToCart('Chicken Dumplings', 650)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Dish 4 -->
+            <div class="food-card">
+
+                <div class="food-image soup">
+                    🍲
+                </div>
+
+                <div class="food-info">
+                    <h3>Hot & Sour Soup</h3>
+
+                    <p>
+                        A delicious traditional Chinese soup
+                        with vegetables, chicken and spices.
+                    </p>
+
+                    <div class="food-bottom">
+                        <strong>Rs. 550</strong>
+
+                        <button onclick="addToCart('Hot & Sour Soup', 550)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Dish 5 -->
+            <div class="food-card">
+
+                <div class="food-image chicken">
+                    🍗
+                </div>
+
+                <div class="food-info">
+                    <h3>Kung Pao Chicken</h3>
+
+                    <p>
+                        Tender chicken cooked with peanuts,
+                        vegetables and spicy Chinese sauce.
+                    </p>
+
+                    <div class="food-bottom">
+                        <strong>Rs. 1,050</strong>
+
+                        <button onclick="addToCart('Kung Pao Chicken', 1050)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Dish 6 -->
+            <div class="food-card">
+
+                <div class="food-image spring">
+                    🥢
+                </div>
+
+                <div class="food-info">
+                    <h3>Spring Rolls</h3>
+
+                    <p>
+                        Crispy rolls filled with fresh vegetables
+                        and served with sweet chili sauce.
+                    </p>
+
+                    <div class="food-bottom">
+                        <strong>Rs. 500</strong>
+
+                        <button onclick="addToCart('Spring Rolls', 500)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Cart -->
+    <section class="cart-section">
+
+        <h2>Your Order</h2>
+
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+        <h3>Total: Rs. <span id="total">0</span></h3>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Checkout
+        </button>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about-section">
+
+        <div class="about-content">
+
+            <p class="section-label">OUR STORY</p>
+
+            <h2>Welcome to Golden Dragon</h2>
+
+            <p>
+                Golden Dragon is a Chinese restaurant dedicated
+                to bringing authentic and delicious Chinese flavors
+                to your table.
+            </p>
+
+            <p>
+                From traditional noodles and fried rice to flavorful
+                dumplings and spicy chicken dishes, every meal is
+                prepared using fresh ingredients and carefully
+                selected spices.
+            </p>
+
+            <div class="features">
+
+                <div>
+                    <span>🥢</span>
+                    <h3>Authentic Recipes</h3>
+                </div>
+
+                <div>
+                    <span>🌶️</span>
+                    <h3>Fresh Ingredients</h3>
+                </div>
+
+                <div>
+                    <span>👨‍🍳</span>
+                    <h3>Expert Chefs</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+
+        <div class="section-title">
+            <p>GET IN TOUCH</p>
+            <h2>Visit Us</h2>
+            <span></span>
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Golden Dragon Chinese Restaurant</h3>
+
+                <p>📍 Main Boulevard, Karachi, Pakistan</p>
+
+                <p>📞 +92 300 1234567</p>
+
+                <p>✉️ info@goldendragon.com</p>
+
+                <p>🕐 Mon - Sun: 12:00 PM - 11:00 PM</p>
+
+            </div>
+
+
+            <form onsubmit="sendMessage(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            🐉 Golden Dragon
+        </div>
+
+        <p>
+            Authentic Chinese flavors, made with passion.
+        </p>
+
+        <p class="copyright">
+            © 2026 Golden Dragon Chinese Restaurant
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
